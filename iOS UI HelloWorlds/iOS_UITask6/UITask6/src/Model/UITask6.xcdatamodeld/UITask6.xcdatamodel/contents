@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="12F45" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ALPhotoModel" representedClassName="ALPhotoModel" syncable="YES">
+        <attribute name="imageUrl" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="photoId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ALUserModel" inverseName="photos" inverseEntity="ALUserModel" syncable="YES"/>
+    </entity>
+    <entity name="ALUserModel" representedClassName="ALUserModel" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ALUserModel" inverseName="friends" inverseEntity="ALUserModel" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ALPhotoModel" inverseName="user" inverseEntity="ALPhotoModel" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ALPhotoModel" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ALUserModel" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
